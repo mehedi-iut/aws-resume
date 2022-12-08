@@ -1,5 +1,5 @@
-# azure-resume
-My Own azure resume
+# aws-resume
+My Own aws resume
 
 ## First steps
 - Frontend folder contains the website.
