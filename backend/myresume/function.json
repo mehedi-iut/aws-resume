@@ -1,0 +1,40 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "in",
+      "name": "counter",
+      "databaseName": "resume",
+      "collectionName": "Counter",
+      "connectionStringSetting": "AzureCosmosDbConnection",
+      "Id": "1",
+      "PartitionKey": "1"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "out",
+      "name": "updatedcounter",
+      "databaseName": "resume",
+      "collectionName": "Counter",
+      "connectionStringSetting": "AzureCosmosDbConnection",
+      "Id": "1",
+      "PartitionKey": "1"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    }
+  ]
+}

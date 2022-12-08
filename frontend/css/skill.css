@@ -1,0 +1,97 @@
+.details{
+    width: 100%;
+    display: flex;  
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.bar{
+    position: relative;
+ 
+    border: 2px solid #0d96e0;
+ 
+    border-radius: 20px;
+  
+}
+.bar div{
+    position: relative;
+    width: 0;
+    height: 9px;
+    border-radius: 10px;
+    background-color: #0d96e0; 
+}
+
+.skills:not(:last-child){
+    margin-bottom: 30px;
+}
+
+/* activate the animation */
+
+
+@keyframes python-fill{
+    100%{
+        width: 80%;
+    }
+}
+@media (prefers-reduced-motion: no-preference) {
+    .python-animation {
+      animation-name: python-fill;
+      animation-duration: 2s;
+      animation-fill-mode: forwards;
+    }
+}
+
+
+@keyframes azfun-fill{
+    100%{
+        width: 90%;
+    }
+}
+@media (prefers-reduced-motion: no-preference) {
+    .azfun-animation {
+      animation: azfun-fill 2s forwards;
+    }
+}
+
+@keyframes k8s-fill{
+    100%{
+        width: 80%;
+    }
+}
+@media (prefers-reduced-motion: no-preference) {
+    .k8s-animation {
+      animation: k8s-fill 2s forwards;
+    }
+}
+
+@keyframes docker-fill{
+    100%{
+        width: 80%;
+    }
+}
+@media (prefers-reduced-motion: no-preference) {
+    .docker-animation {
+      animation: docker-fill 2s forwards;
+    }
+}
+
+@keyframes prometheus-fill{
+    100%{
+        width: 75%;
+    }
+}
+@media (prefers-reduced-motion: no-preference) {
+    .prometheus-animation {
+      animation: prometheus-fill 2s forwards;
+    }
+}
+
+@keyframes grafana-fill{
+    100%{
+        width: 75%;
+    }
+}
+@media (prefers-reduced-motion: no-preference) {
+    .grafana-animation {
+      animation: grafana-fill 2s forwards;
+    }
+}
