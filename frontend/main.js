@@ -4,21 +4,38 @@ window.addEventListener('DOMContentLoaded', (event) =>{
 
 //const functionApiUrl = 'https://getmyresumecounter.azurewebsites.net/api/GetResumeCounter?code=lgiQjdl4Vb55Yl0i35nhLnmalOy5Iu0nqxv1Gu1Ojp84OMnm7ulZvw=='
 //const localfunctionApi = 'http://localhost:7071/api/GetResumeCounter'
-const localfunctionApi = 'http://localhost:7071/api/myresume'
-const pythonFunctionUrl = 'https://pythonresumecounter.azurewebsites.net/api/myresume?code=yiyozTBbp0wwUI3sYddpZGmIapm97muZHphdnR9RsDVju/p1vToMjQ=='
+// const localfunctionApi = 'http://localhost:7071/api/myresume'
+// const pythonFunctionUrl = 'https://pythonresumecounter.azurewebsites.net/api/myresume?code=yiyozTBbp0wwUI3sYddpZGmIapm97muZHphdnR9RsDVju/p1vToMjQ=='
 
-const getVisitCount = () => {
-    let count = 30
-    fetch(pythonFunctionUrl).then(response => {
-        return response.json()
-    }).then(response => {
-        console.log("Website called function API.")
-        count = response.count
-        document.getElementById("counter").innerText = count
-    }).catch(function(error){
-        console.log(error)
-    })
-    return count
+// const pythonFunctionUrl = 'https://i4ywubmo41.execute-api.ap-southeast-1.amazonaws.com/default/visitCount'
+
+// const getVisitCount = () => {
+//     let count = 30
+//     fetch(pythonFunctionUrl).then(response => {
+//         return response.json()
+//     }).then(response => {
+//         console.log("Website called function API.")
+//         count = response.count
+//         document.getElementById("counter").innerText = count
+//     }).catch(function(error){
+//         console.log(error)
+//     })
+//     return count
+// }
+
+async function getVisitCount(){
+    try{
+        let response = await fetch('https://i4ywubmo41.execute-api.ap-southeast-1.amazonaws.com/default/visitCount', {
+            method: 'GET',
+            headers: {}
+        });
+        let data = await response.json()
+        document.getElementById("counter").innerText = data['count']
+        console.log(data)
+        return data
+    } catch (err) {
+        console.error(err)
+    }
 }
 
 
