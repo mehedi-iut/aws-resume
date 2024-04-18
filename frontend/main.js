@@ -25,12 +25,12 @@ window.addEventListener('DOMContentLoaded', (event) =>{
 
 async function getVisitCount(){
     try{
-        let response = await fetch('https://i4ywubmo41.execute-api.ap-southeast-1.amazonaws.com/default/visitCount', {
+        let response = await fetch('https://a4dsk2xrp23buhonqdh4hg2i2e0ovmqn.lambda-url.us-east-1.on.aws/', {
             method: 'GET',
             headers: {}
         });
         let data = await response.json()
-        document.getElementById("counter").innerText = data['count']
+        document.getElementById("counter").innerText = data
         console.log(data)
         return data
     } catch (err) {
